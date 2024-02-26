@@ -31,7 +31,7 @@ display() {
   while (temp != null) {
     print(temp.data);
     temp = temp.next;
-  }
+  } 
 }
 
 //deleting particular element
