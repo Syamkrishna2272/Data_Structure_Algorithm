@@ -23,7 +23,7 @@ Newnode(int data) {
   } else {
     tail?.next = newnode;
   }
-  tail = newnode;
+  tail = newnode; 
 }
 
 display() {

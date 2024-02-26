@@ -32,7 +32,7 @@ display() {
     print(temp.data);
     temp = temp.next;
   } 
-}
+} 
 
 //deleting particular element
 

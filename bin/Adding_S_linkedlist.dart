@@ -27,7 +27,7 @@ addnodeNewvalue(int data) {
 
 display() {
   node? temp = head;
-  while (temp != null) {
+  while (temp != null) {  
     print(temp.data);
     temp = temp.next;
   }
