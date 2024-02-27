@@ -34,30 +34,6 @@ display() {
   }
 }
 
-deletenode(int data) {
-  node? temp = head;
-  node? prev;
-  if (temp != null && temp.data == data) {
-    head = temp.next;
-    return;
-  }
-  while (temp != null && temp.data != data) {
-    prev = temp;
-    temp = temp.next;
-    return;
-  }
-  if (temp == null) {
-    return;
-  }
-
-  if (temp == tail) {
-    tail = prev;
-    tail?.next = null;
-    return;
-  }
-  prev?.next = temp.next;
-}
-
 insertAfter(int nextTo, data) {
   node newnode = node(data);
   node? temp=head;
