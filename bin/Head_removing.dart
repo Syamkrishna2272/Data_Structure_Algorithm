@@ -1,8 +1,10 @@
 main() {
-  Addnode(15);
-  Addnode(25);
+  Addnode(10);
+  Addnode(20);
   Addnode(30);
-  removeTail();
+  Addnode(40);
+  Addnode(50);
+  removeHead();
   display();
 }
 
@@ -16,13 +18,13 @@ node? head;
 node? tail;
 
 Addnode(int data) {
-  node newnode = node(data);
+  node newNode = node(data);
   if (head == null) {
-    head = newnode;
+    head = newNode;
   } else {
-    tail?.next = newnode;
+    tail?.next = newNode;
   }
-  tail = newnode;
+  tail = newNode;
 }
 
 display() {
@@ -33,13 +35,7 @@ display() {
   }
 }
 
-removeTail() {
+removeHead() {
   node? temp = head;
-  node? prev = null;
-  while (temp != null && temp.next != null) {
-    prev = temp;
-    temp = temp.next;
-  }
-  tail = prev;
-  tail?.next = null;
+  head = temp?.next;
 }

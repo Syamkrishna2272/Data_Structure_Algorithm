@@ -1,8 +1,9 @@
 main() {
-  Addnode(15);
-  Addnode(25);
-  Addnode(30);
-  removeTail();
+  Newnode(10);
+  Newnode(25);
+  Newnode(30);
+  Newnode(45);
+  rev();
   display();
 }
 
@@ -15,7 +16,7 @@ class node {
 node? head;
 node? tail;
 
-Addnode(int data) {
+Newnode(int data) {
   node newnode = node(data);
   if (head == null) {
     head = newnode;
@@ -33,13 +34,14 @@ display() {
   }
 }
 
-removeTail() {
-  node? temp = head;
+rev() {
   node? prev = null;
-  while (temp != null && temp.next != null) {
-    prev = temp;
-    temp = temp.next;
+  node? curr = head;
+  while (curr != null) {
+    node? nxt = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = nxt;
   }
-  tail = prev;
-  tail?.next = null;
+  head = prev;
 }
