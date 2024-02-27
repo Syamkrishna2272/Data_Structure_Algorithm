@@ -27,9 +27,9 @@ Addnewnode(int data) {
 }
 
 display() {
-  node? temp = tail;
+  node? temp = tail;     // only here is the changes is did convert head to tail
   while (temp != null) {
     print(temp.data);
-    temp = temp.prev;
+    temp = temp.prev;     // and here convert next to prev
   }
 }
