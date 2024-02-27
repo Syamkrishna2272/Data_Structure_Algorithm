@@ -18,8 +18,8 @@ node? tail;
 Addnewnode(int data) {
   node newNode = node(data);
   if (head == null) {
-    head = newNode;
-  } else {
+    head = newNode ;
+  } else { 
     tail?.next = newNode;
     newNode.prev = tail;
   }
