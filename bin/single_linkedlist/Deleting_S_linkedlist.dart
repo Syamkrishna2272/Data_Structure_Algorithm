@@ -33,7 +33,6 @@ display() {
     temp = temp.next;
   } 
 } 
-
 //deleting particular element
 
 delete(int data) {
