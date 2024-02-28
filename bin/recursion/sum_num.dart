@@ -1,6 +1,5 @@
 addNumbers(n){
   print('Value of n is $n');
-  // terminassion condition
   if(n<=1){
     return 1;
   }

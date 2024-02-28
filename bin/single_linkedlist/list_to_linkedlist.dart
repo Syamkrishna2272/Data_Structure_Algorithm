@@ -10,7 +10,6 @@ Node? tail;
 
 addnodes(int data) {
   Node newNode = Node(data);
-
   if (head == null) {
     head = newNode;
   } else {
