@@ -1,7 +1,7 @@
 main() {
   List<int> arr = [10, 20, 30, 40, 50, 60, 70, 80, 90];
   print("The array element is $arr");
-  var res = binary(arr, 80);
+  var res = binary(arr, 100);
   print("the index of the element is $res ");
 }
 

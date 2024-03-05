@@ -36,7 +36,7 @@ display() {
 
 insertAfter(int nextTo, data) {
   node newnode = node(data);
-  node? temp=head;
+  node? temp = head;
   while (temp != null && temp.data != nextTo) {
     temp = temp.next;
   }

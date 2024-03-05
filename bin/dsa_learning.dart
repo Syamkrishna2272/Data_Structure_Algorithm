@@ -1,12 +1,11 @@
 main() {
-  List<int> arr = [10, 20, 30, 40, 50, 60, 70, 80, 90];
-  print("The array element is $arr");
-  var res = binary(arr, 80);
-  print("the index of the element is $res ");
+  List arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var res=checking(arr, 9);
+  print(res);
 }
 
-binary(List arr, int target) {
-  int left = 0; 
+checking(List arr, int target) {
+  int left = 0;
   int right = arr.length - 1;
   while (left < right) {
     int mid = (left + right) ~/ 2;
