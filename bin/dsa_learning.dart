@@ -1,24 +1,62 @@
 main() {
-  List arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  var res=checking(arr, 9);
-  print(res);
+  add(10);
+  add(20);
+  add(30);
+  add(40);
+  add(50);
+  add(60);
+  add(70);
+  add(80);
+  add(90);
+  delete(70);
+  display();
 }
 
-checking(List arr, int target) {
-  int left = 0;
-  int right = arr.length - 1;
-  while (left < right) {
-    int mid = (left + right) ~/ 2;
-    if (target == arr[mid]) {
-      return mid;
-    } else if (target == arr[left]) {
-      return left;
-    } else if (target == arr[right]) {
-      return right;
-    } else if (target == arr[mid]) {
-      right = mid - 1;
-    } else {
-      left = mid + 1;
-    }
+class node {
+  int? data;
+  node? next;
+  node(this.data);
+}
+
+node? head;
+node? tail;
+
+add(int data) {
+  node newnode = node(data);
+  if (head == null) {
+    head = newnode;
+  } else {
+    tail?.next = newnode;
   }
+  tail = newnode;
+}
+
+display() {
+  node? temp = head;
+  while (temp != null) {
+    print(temp.data);
+    temp = temp.next;
+  }
+}
+
+delete(int data) {
+  node? temp = head;
+  node? prev;
+  if (temp != null && temp.data == data) {
+    head = temp.next;
+    return;
+  }
+  while (temp != null && temp.data != data) {
+    prev = temp;
+    temp = temp.next;
+  }
+  if (temp == null) {
+    return;
+  }
+  if (temp == tail) {
+    tail = temp;
+    tail?.next = null;
+  }
+
+  prev?.next = temp.next;
 }

@@ -44,7 +44,7 @@ insertAfter(int nextTo, data) {
     return;
   }
   if (temp == tail) {
-    tail?.next = newnode;
+    tail?.next = newnode; 
     tail = newnode;
     return;
   }
