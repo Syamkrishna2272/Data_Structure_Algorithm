@@ -47,7 +47,7 @@ delete(int data) {
     temp = temp.next;
   }
   if (temp == null) {
-    return;
+    return; 
   }
   if (temp == tail) {
     tail = prev;
