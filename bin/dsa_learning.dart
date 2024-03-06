@@ -1,14 +1,24 @@
 main() {
-  List<int> a = [1, 2, 3, 4, 5, 6];
-  linear(a, 5);
+  List arr = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+  var res = search(arr, 50);
+  print(res);
 }
 
-linear(List<int> a, int target) {
-  for (int i = 0; i < a.length; i++) {
-    if (a[i] == target) {
-      print("element found index is $i");
-      return;
+search(List arr, int target) {
+  int left = 0;
+  int right = arr.length - 1;
+  while (left < right) {
+    int mid = (left + right) ~/ 2;
+    if (target == arr[mid]) {
+      return mid;
+    } else if (target == arr[left]) {
+      return left;
+    } else if (target == arr[right]) {
+      return right;
+    } else if (target == arr[mid]) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
     }
   }
-  print("Not element");
 }
