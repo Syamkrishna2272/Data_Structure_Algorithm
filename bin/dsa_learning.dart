@@ -1,4 +1,14 @@
-main(){
-  List a=[1,2,3,4];
+addNumbers(n){
+  if(n<=1){
+    return 1;
+  }
+  else{
+    return n + addNumbers(n-1);
+  }
 }
 
+
+main(){
+  var sum=addNumbers(5);
+  print('The sum is $sum');
+}
