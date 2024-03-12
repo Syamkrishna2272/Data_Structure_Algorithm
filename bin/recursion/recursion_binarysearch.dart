@@ -1,9 +1,11 @@
 main() {
   List<int> arr = [1, 2, 3, 4, 5, 10, 25, 30, 66, 18, 28];
-  int target = 25;
+  int target = 35;
   var b = bsearch(arr, target, 0, arr.length - 1);
   if (b != -1) {
     print("Element found $target at index $b");
+  }else{
+    print("Element $target not found in the list");
   }
 }
 
