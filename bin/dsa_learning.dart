@@ -1,61 +1,24 @@
 main() {
-  nodeadd(10);
-  nodeadd(20);
-  nodeadd(30);
-  nodeadd(40);
-  nodeadd(50);
-  nodeadd(60);
-  delete(60);
-  display();
-}
-
-class node {
-  int? data;
-  node? next;
-  node? prev;
-  node(this.data);
-}
-
-node? head;
-node? tail;
-
-nodeadd(int data) {
-  node newnode = node(data);
-  if (head == null) {
-    head = newnode;
+  List<int> arr = [1, 2, 3, 4, 5, 6, 7, 10, 15, 18, 19, 20, 23];
+  int target = 23;
+  var res = bcheck(arr, target, 0, arr.length - 1);
+  if (res != -1) {
+    print("element found $target in the index $res");
   } else {
-    tail?.next = newnode;
-    newnode.prev = tail;
-  }
-  tail = newnode;
-}
-
-display() {
-  node? temp = head;
-  while (temp != null) {
-    print(temp.data);
-    temp = temp.next;
+    print("No element");
   }
 }
 
-delete(int data) {
-  node? temp = head;
-  node? prev;
-  if (temp != null && temp.data == data) {
-    head = temp.next;
-    return;
+bcheck(List<int> a, int target, int left, int right) {
+  if (left > right) {
+    return -1;
   }
-  while (temp != null && temp.data != data) {
-    prev = temp;
-    temp = temp.next;
+  int mid = (left + right) ~/ 2;
+  if (a[mid] == target) {
+    return mid;
+  } else if (a[mid] < target) {
+    return bcheck(a, target, left + 1, right);
+  } else {
+    return bcheck(a, target, left, right - 1);
   }
-  if (temp == null) {
-    return; 
-  }
-  if (temp == tail) {
-    tail = prev;
-    tail?.next = null;
-    return;
-  }
-  prev?.next = temp.next;
 }
