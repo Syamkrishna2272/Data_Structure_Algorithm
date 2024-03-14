@@ -1,14 +1,10 @@
 main() {
-  add('a');
-  add('b');
-  add('c');
-  add('d');
-  add('e');
-  add('g');
-  add('h');
-  add('i');
+  List<String> a = ['s', 'y', 'a', 'm', 'k', 'r', 'i', 's', 'h', 'n', 'a'];
+  for (int i = 0; i < a.length; i++) {
+    check(a[i]);
+  }
   rev();
-  display();
+  dis();
 }
 
 class node {
@@ -20,7 +16,7 @@ class node {
 node? head;
 node? tail;
 
-add(String data) {
+check(String data) {
   node newnode = node(data);
   if (head == null) {
     head = newnode;
@@ -30,7 +26,7 @@ add(String data) {
   tail = newnode;
 }
 
-display() {
+dis() {
   node? temp = head;
   while (temp != null) {
     print(temp.data);

@@ -1,24 +1,47 @@
 main() {
-  List<int> arr = [1, 2, 3, 4, 5, 6, 7, 10, 15, 18, 19, 20, 23];
-  int target = 23;
-  var res = bcheck(arr, target, 0, arr.length - 1);
-  if (res != -1) {
-    print("element found $target in the index $res");
+  List<String> a = ['s', 'y', 'a', 'm', 'k', 'r', 'i', 's', 'h', 'n', 'a'];
+  for (int i = 0; i < a.length; i++) {
+    check(a[i]);
+  }
+  rev();
+  dis();
+}
+
+class node {
+  String? data;
+  node? next;
+  node(this.data);
+}
+
+node? head;
+node? tail;
+
+check(String data) {
+  node newnode = node(data);
+  if (head == null) {
+    head = newnode;
   } else {
-    print("No element");
+    tail?.next = newnode;
+  }
+  tail = newnode;
+}
+
+dis() {
+  node? temp = head;
+  while (temp != null) {
+    print(temp.data);
+    temp = temp.next;
   }
 }
 
-bcheck(List<int> a, int target, int left, int right) {
-  if (left > right) {
-    return -1;
+rev() {
+  node? prev = null;
+  node? curr = head;
+  while (curr != null) {
+    node? nxt = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = nxt;
   }
-  int mid = (left + right) ~/ 2;
-  if (a[mid] == target) {
-    return mid;
-  } else if (a[mid] < target) {
-    return bcheck(a, target, left + 1, right);
-  } else {
-    return bcheck(a, target, left, right - 1);
-  }
+  head = prev;
 }
