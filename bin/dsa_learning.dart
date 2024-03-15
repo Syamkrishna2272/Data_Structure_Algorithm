@@ -1,47 +1,13 @@
 main() {
-  List<String> a = ['s', 'y', 'a', 'm', 'k', 'r', 'i', 's', 'h', 'n', 'a'];
-  for (int i = 0; i < a.length; i++) {
-    check(a[i]);
-  }
-  rev();
-  dis();
+  List a = [1, 2, 3, 4, 5];
+  int b = sum(a, 0);
+  print(b);
 }
 
-class node {
-  String? data;
-  node? next;
-  node(this.data);
-}
-
-node? head;
-node? tail;
-
-check(String data) {
-  node newnode = node(data);
-  if (head == null) {
-    head = newnode;
+sum(List a, int i) {
+  if (i == a.length) {
+    return 0;
   } else {
-    tail?.next = newnode;
+    return a[i] + sum(a, i + 1);
   }
-  tail = newnode;
-}
-
-dis() {
-  node? temp = head;
-  while (temp != null) {
-    print(temp.data);
-    temp = temp.next;
-  }
-}
-
-rev() {
-  node? prev = null;
-  node? curr = head;
-  while (curr != null) {
-    node? nxt = curr.next;
-    curr.next = prev;
-    prev = curr;
-    curr = nxt;
-  }
-  head = prev;
 }

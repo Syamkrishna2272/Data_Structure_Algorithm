@@ -1,3 +1,13 @@
+
+main() {
+  List<int> arr = [10, 20, 30, 30, 40, 50];
+  for (int i = 0; i < arr.length; i++) {
+    addnodes(arr[i]);
+  }
+  display();
+}
+
+
 class Node {
   int data;
   Node? next;
@@ -26,10 +36,4 @@ display() {
   }
 }
 
-main() {
-  List<int> arr = [10, 20, 30, 30, 40, 50];
-  for (int i = 0; i < arr.length; i++) {
-    addnodes(arr[i]);
-  }
-  display();
-}
+

@@ -8,7 +8,7 @@ check(List<String> a, String target) {
   int left = 0;
   int right = a.length - 1;
   while (left < right) {
-    int mid = (right + left) ~/ 2;
+    int mid = (left+right) ~/ 2;
     int res = a[mid].compareTo(target);
     if (res == 0) {
       return a[mid];

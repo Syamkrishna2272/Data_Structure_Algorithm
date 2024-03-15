@@ -1,15 +1,13 @@
-addNumbers(n){
+addNumbers(n) {
   print('Value of n is $n');
-  if(n<=1){
+  if (n <= 1) {
     return 1;
-  }
-  else{
-    return n + addNumbers(n-1);
+  } else {
+    return n + addNumbers(n - 1);
   }
 }
 
-
-main(){
-  var sum=addNumbers(5);
+main() {
+  var sum = addNumbers(5);
   print('The sum is $sum');
 }
