@@ -1,22 +1,18 @@
 main() {
-  List<int> arr = [5, 8, 9, 1, 2, 6, 4];
-  bool res = c(arr, 5, 11);
-  print(res);
+  List<int> arr = [1, 2, 5, 8, 9, 7];
+  var ab = c(arr, 5, 9);
+  print(ab);
 }
 
-c(List<int> a, int target1, int target2) {
-  bool ftarget = false;
-  bool ftargets = false;
-  for (int i = 0; i < a.length;i++) {
-    if (a[i] == target1) {
-      ftarget = true;
-    } else if (a[i] == target2) {
-      ftargets = true;
+c(List<int> arr, int t1, int t2) {
+  bool target1 = false;
+  bool target2 = false;
+  for (int i = 0; i < arr.length; i++) {
+    if (arr[i] == t1) {
+      target1 = true;
+    } else if (arr[i] == t2) {
+      target2 = true;
     }
-    if (ftarget && ftargets) {
-      return true;
-    } else {
-      return false;
-    }
+    return target1&&target2;
   }
 }
