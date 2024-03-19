@@ -1,19 +1,42 @@
 main() {
-  List<int> arr = [1, 2, 5, 8, 9, 6, 3];
-  var res = c(arr, 5, 2);
-  print(res);
+  List<int> arr = [10, 20, 36, 25, 15, 50];
+  for (int i = 0; i < arr.length; i++) {
+    sam(arr[i]);
+  }
+  prepend(55);
+  prepend(60);
+  dis();
 }
 
-c(List<int> arr, int t1, int t2) {
-  bool target1 = false;
-  bool target2 = false;
-  for (int i = 0; i < arr.length; i++) {
-    if (arr[i] == t1) {
-      target1 = true;
-    }
-    if (arr[i] == t2) {
-      target2 = true;
-    }
+class node {
+  int? data;
+  node? next;
+  node(this.data);
+}
+
+node? head;
+node? tail;
+
+sam(int data) {
+  node newnode = node(data);
+  if (head == null) {
+    head = newnode;
+  } else {
+    tail?.next = newnode;
   }
-  return target1 && target2;
+  tail = newnode;
+}
+
+dis() {
+  node? temp = head;
+  while (temp != null) {
+    print(temp.data);
+    temp = temp.next;
+  }
+}
+
+prepend(int data) {
+  node newnode = node(data);
+  newnode.next = head;
+  head = newnode;
 }
