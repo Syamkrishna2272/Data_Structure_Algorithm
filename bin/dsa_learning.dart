@@ -1,7 +1,7 @@
 main() {
-  List<int> arr = [1, 2, 5, 8, 9, 7];
-  var ab = c(arr, 5, 9);
-  print(ab);
+  List<int> arr = [1, 2, 5, 8, 9, 6, 3];
+  var res = c(arr, 5, 2);
+  print(res);
 }
 
 c(List<int> arr, int t1, int t2) {
@@ -10,9 +10,10 @@ c(List<int> arr, int t1, int t2) {
   for (int i = 0; i < arr.length; i++) {
     if (arr[i] == t1) {
       target1 = true;
-    } else if (arr[i] == t2) {
+    }
+    if (arr[i] == t2) {
       target2 = true;
     }
-    return target1&&target2;
   }
+  return target1 && target2;
 }

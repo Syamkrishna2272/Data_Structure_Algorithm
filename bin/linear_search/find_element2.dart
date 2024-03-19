@@ -13,6 +13,6 @@ c(List<int> arr, int t1, int t2) {
     } else if (arr[i] == t2) {
       target2 = true;
     }
-    return target1&&target2;
   }
+  return target1 && target2;
 }
