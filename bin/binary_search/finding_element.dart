@@ -21,7 +21,7 @@ binary(List arr, int target) {
     } else {
       left = mid + 1;
     }
-  }
+  } 
 }
 
 

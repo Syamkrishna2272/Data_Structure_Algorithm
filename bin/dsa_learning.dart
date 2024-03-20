@@ -1,49 +1,18 @@
 main() {
-  addnodeNewvalue(5);
-  addnodeNewvalue(10);
-  addnodeNewvalue(15);
-  addnodeNewvalue(20);
-  addnodeNewvalue(40);
-  addnodeNewvalue(90);
-  addnodeNewvalue(20);
-
-  findMiddle();
-  display();
+  List<int> arr = [1, 2, 5, 8, 9, 3, 7];
+  var ab = c(arr, 5, 11);
+  print(ab);
 }
 
-class node {
-  int? data;
-  node? next;
-  node(this.data);
-}
-
-node? head;
-node? tail;
-
-addnodeNewvalue(int data) {
-  node newnode = node(data);
-  if (head == null) {
-    head = newnode;
-  } else {
-    tail?.next = newnode;
+c(List<int> arr, int t1, int t2) {
+  bool target1 = false;
+  bool target2 = false;
+  for (int i = 0; i < arr.length; i++) {
+    if (arr[i] == t1) {
+      target1 = true;
+    } else if (arr[i] == t2) {
+      target2 = true;
+    }
   }
-  tail = newnode;
-}
-
-display() {
-  node? temp = head;
-  while (temp != null) {
-    print(temp.data);
-    temp = temp.next;
-  }
-}
-
-void findMiddle() {
-  node? left = head;
-  node? right = head;
-  while (right != null && right.next != null) {
-    left = left!.next;
-    right = right.next!.next;
-  }
-  print('Middle element: ${left!.data}');
+  return target1 && target2;
 }
