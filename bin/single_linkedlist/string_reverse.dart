@@ -34,6 +34,7 @@ dis() {
   }
 }
 
+
 rev() {
   node? prev = null;
   node? curr = head;

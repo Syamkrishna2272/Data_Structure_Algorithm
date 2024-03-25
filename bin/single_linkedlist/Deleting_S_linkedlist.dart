@@ -56,3 +56,4 @@ delete(int data) {
   }
   prev?.next = temp.next;
 }
+  

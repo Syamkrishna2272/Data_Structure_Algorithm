@@ -1,26 +1,52 @@
 main() {
-  List<int> arr = [10, 25, 30, 32, 40, 45, 55, 60];
-  int tar=45;
-  var res = bc(arr, tar);
-  if(res!=null){
-    print("element $tar index is $res");
-  }else{
-    print("no element in the list");
+  List<int> a = [
+    10,
+    25,
+    30,
+    40,
+    50,
+    55,
+  ];
+  for (int i = 0; i < a.length; i++) {
+    sl(a[i]);
+  }
+  mid();
+  dis();
+}
+
+class node {
+  int? data;
+  node? next;
+  node(this.data);
+}
+
+node? head;
+node? tail;
+
+sl(int data) {
+  node newNode = node(data);
+  if (head == null) {
+    head = newNode;
+  } else {
+    tail?.next = newNode;
+  }
+  tail = newNode;
+}
+
+dis() {
+  node? temp = head;
+  while (temp != null) {
+    print(temp.data);
+    temp = temp.next;
   }
 }
 
-bc(List<int> arr, int target) {
-  int l = 0;
-  int r = arr.length - 1;
-  while (l < r) {
-    int mid = (l + r) ~/ 2;
-    if (target == arr[mid]) {
-      return mid;
-    } else if (target > arr[mid]) {
-      l = mid + 1;
-    } else {
-      r = mid - 1;
-    }
+mid() {
+  node? le = head;
+  node? ri = head;
+  while (ri != null && ri.next != null) {
+    le = le?.next;
+    ri = ri.next?.next;
   }
-  return -1;
+  print("mid element is ${le?.data}");
 }
