@@ -45,7 +45,7 @@ delete(int data) {
   while (temp != null && temp.data != data) {
     prev = temp;
     temp = temp.next;
-  }
+  } 
   if (temp == null) {
     return; 
   }
